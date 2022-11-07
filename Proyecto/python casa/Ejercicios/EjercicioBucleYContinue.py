@@ -1,0 +1,12 @@
+#BUCLE QUE CUENTE EL NUMERO DE CARACTERES DE UN STRING
+
+nombre = "Pildoras Informaticas" #NOS IMPRIMIRÁ 21 CARACTERES PORQUE EL ESPACIO CUENTA COMO 1
+
+contador = 0
+
+for i in nombre:
+    
+    if i == " ": #CON ESTE IF LE DECIMOS QUE SI LA CADENA NOMBRE TIENE UN ESPACIO EN BLANCO
+        continue #QUE LO IGNORE Y SALTE A LA SIGUIENTE
+    contador +=1
+print(contador)
