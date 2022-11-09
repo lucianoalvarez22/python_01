@@ -5,3 +5,13 @@
 # Si el usuario ingresa d5, su programa debe informar que el cuadrado es blanco. 
 # Su programa puede suponer que siempre se ingresará una posición válida. 
 # No es necesario realizar ninguna comprobación de errores.
+
+tablero = {}
+
+tablero[("a",1)] = "Blanco"
+tablero[("a",2)] = "Negro"
+tablero[("a",3)] = "Blanco"
+
+print(tablero[("a",1)])
+
+#OTRA OPCION CON TABLERO
