@@ -6,25 +6,37 @@
 # Su programa puede suponer que siempre se ingresará una posición válida. 
 # No es necesario realizar ninguna comprobación de errores.
 
-tablero = []
+def crear_tabla():
+    color = "blanco"
+    dict = {}
+    columnas = ["A","B","C","D","E","F","G","H"]
 
-for f in range(8):
-    fila = []
-    for c in range(8):
-        if c%2 == 0:
-            fila.append(0)
+    for fila in range(8):
+        for columna in columnas:
+            key = str(fila) + str(columna)
+            if color == "blanco":
+                dict[key] = color
+                color = "negro"
+            else:
+                dict[key] = color
+                color = "blanco"
+
+        if color == "blanco":
+            color = "negro"
         else:
-            fila.append(1)
-    tablero.append(fila)
-print(f"{tablero}\t",end="")
+            color = "blanco"
+    return dict
 
 
+def peticion_usuario(f_usuario, c_usuario,dicionario_completo):
+    usuario = f_usuario + c_usuario.upper()
 
-    
-""" tablero[("a",1)] = "Blanco"
-tablero[("a",2)] = "Negro"
-tablero[("a",3)] = "Blanco"
+    return dicionario_completo.get(usuario)
 
-print(tablero[("a",1)]) """
+diccionario = crear_tabla()
+fila_usuario = input("Introduce la fila: ")
+columna_usuario = input("Introduce la columna: ")
+resultado = peticion_usuario(fila_usuario,columna_usuario,diccionario)
+print(resultado)
 
-#OTRA OPCION CON TABLERO
+
