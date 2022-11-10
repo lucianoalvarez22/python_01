@@ -16,7 +16,7 @@ def pinta_tabla():
             print(f"{c}\t",end="")
         print()
 
-#pinta_tabla()
+pinta_tabla()
 
 #------------------------------
 
@@ -33,4 +33,4 @@ def pinta_tablas (filas,cols):
     cadena += "</table>"
     return cadena
 
-print(pinta_tablas(10,10))
+""" print(pinta_tablas(10,10)) """

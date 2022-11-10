@@ -5,7 +5,7 @@ import random
 def crea_equipos (lista_gente,miembros):
     if len(lista_gente) < miembros:
         return lista_gente
-    if miembros == 0:
+    elif miembros == 0:
         return []
         
     random.shuffle(lista_gente)

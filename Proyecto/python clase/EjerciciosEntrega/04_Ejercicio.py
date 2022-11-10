@@ -6,12 +6,25 @@
 # Su programa puede suponer que siempre se ingresará una posición válida. 
 # No es necesario realizar ninguna comprobación de errores.
 
-tablero = {}
+tablero = []
 
-tablero[("a",1)] = "Blanco"
+for f in range(8):
+    fila = []
+    for c in range(8):
+        if c%2 == 0:
+            fila.append(0)
+        else:
+            fila.append(1)
+    tablero.append(fila)
+print(f"{tablero}\t",end="")
+
+
+
+    
+""" tablero[("a",1)] = "Blanco"
 tablero[("a",2)] = "Negro"
 tablero[("a",3)] = "Blanco"
 
-print(tablero[("a",1)])
+print(tablero[("a",1)]) """
 
 #OTRA OPCION CON TABLERO
