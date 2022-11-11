@@ -3,10 +3,10 @@
 #Y DEVOLVERÁ LA CANTIDAD DE SEGUNDOS DE DICHA HORA
 
 
-def dame_segundos (hora_introducida):
-
+def segundos (hora_introducida):
+    trocear_hora = hora_introducida.split(":")
     hora_lista = []
-    for i in hora_introducida:
+    for i in trocear_hora:
         i = int(i)
         hora_lista.append(i)
 
@@ -16,11 +16,20 @@ def dame_segundos (hora_introducida):
 
     return calculosegundos
 
+def dif_horas (inicio,fin):
+    diferencia = abs(segundos(fin) - segundos(inicio))
+    h = diferencia //3600
+    m = diferencia % 3600//60
+    s = diferencia % 3600 % 60
 
-usuario_hora = input("Dame una hora: ")
+    return f"{h}:{m}:{s}"
+
+
+""" usuario_hora = input("Dame una hora: ")
 trocear_hora = usuario_hora.split(":")
-print(dame_segundos(trocear_hora))
+print(segundos(trocear_hora)) """
 
+print(dif_horas("20:00:00", "19:59:00"))
 
 
     
