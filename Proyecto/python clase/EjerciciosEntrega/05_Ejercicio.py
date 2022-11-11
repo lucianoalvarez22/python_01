@@ -20,7 +20,7 @@ def promedio (lista_valores): #Funcion que devuelve los calculos del promedio
     contador = 0
     for i in (lista_valores): #Itero la lista de valores
         contador += i #Lo incremento al contador y voy sumando
-    return contador/(len(lista_valores)-1) #Devuelvo el calcula de la suma del contador // la longitud de la lista -1 ("Menos 1" porque el ultimo elemento introducido es 0 que es para finalizar)
+    return contador/(len(lista_valores)-1) #Devuelvo el calculo de la suma del contador // la longitud de la lista -1 ("Menos 1" porque el ultimo elemento introducido es 0 que es para finalizar)
 
 stop = 0 #Creo variable stop para poder cambiar el numero con el que se pare la introduccion de valores
 coleccion_total_valores = dame_lista_valores(stop)

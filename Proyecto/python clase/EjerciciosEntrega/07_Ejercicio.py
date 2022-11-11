@@ -28,7 +28,7 @@ def dame_edades_grupo (): #Funcion que devuelve una lista con las edades introdu
     return lista_edades
 
 
-def costo_grupo_total (edades_global): #Funcion de devuelve el cálculo total de lo que cuesta el grupo
+def costo_grupo_total (edades_global): #Funcion que devuelve el cálculo total de lo que cuesta el grupo
     precio_total = 0
     for edades_grupo in (edades_global): #Itero la lista de edades y con condicionales voy añadiendole y sumandole valores a la variable "precio_total"
         if edades_grupo <= 2:
