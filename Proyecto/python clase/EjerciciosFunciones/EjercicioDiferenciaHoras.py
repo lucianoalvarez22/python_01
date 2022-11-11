@@ -2,7 +2,7 @@
 #DEVOLVERÁ LA DIFERENCIA ENTRE ELLAS EN FORMATO HH:MM:SS
 
 def dif(inicio,fin):
-    pass
+    
     lista_primera_hora = []
     for i in inicio:
         i = int(i)

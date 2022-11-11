@@ -16,21 +16,21 @@
 
 # El costo debe mostrarse con dos decimales.
 
-def dame_edades_grupo ():
+def dame_edades_grupo (): #Funcion que devuelve una lista con las edades introducidas
     lista_edades = []
-    edad_usuario = (input("Ingresa la edad del cliente: "))
-    while True:
-        if edad_usuario == "":
+    edad_usuario = input("Ingresa la edad del cliente: ")
+    while True: #Mientras el input sea true(introduzca un valor que no sea "intro")
+        if edad_usuario == "": 
             break
-        edad_usuario = int(edad_usuario)
-        lista_edades.append(edad_usuario)
-        edad_usuario = (input("Ingresa la edad del cliente: "))
+        edad_usuario = int(edad_usuario) #Convierto el string en entero
+        lista_edades.append(edad_usuario) #Añado el valor a la lista vacia
+        edad_usuario = (input("Ingresa la edad del cliente: ")) #Vuelvo a pedir el input para ingresar un valor y mientras siga siendo True vuelve arriba.
     return lista_edades
 
 
-def costo_grupo_total (edades_global):
+def costo_grupo_total (edades_global): #Funcion de devuelve el cálculo total de lo que cuesta el grupo
     precio_total = 0
-    for edades_grupo in (edades_global):
+    for edades_grupo in (edades_global): #Itero la lista de edades y con condicionales voy añadiendole y sumandole valores a la variable "precio_total"
         if edades_grupo <= 2:
             precio_total += 0
         elif edades_grupo >= 3 and edades_grupo <=12:
@@ -39,7 +39,7 @@ def costo_grupo_total (edades_global):
             precio_total += 14
         else:
             precio_total += 23
-    return "{0:.2f}".format(precio_total)
+    return "{0:.2f}".format(precio_total) 
 
 coleccion_edades = dame_edades_grupo()
 print(f"El pago total de tu grupo es de {costo_grupo_total(coleccion_edades)}€")

@@ -4,8 +4,8 @@
 # Muestre "28 o 29 días" para febrero para que se aborden los años bisiestos.
 
 
-def dame_dias (mes_usuario):
-    meses = {
+def dame_dias (mes_usuario): #Funcion que me devuelva los dias que tiene determinado mes
+    meses = { #Diccionario de mes y dias (clave-valor)
         "enero":"31 dias",
         "febrero":"28 o 29 dias",
         "marzo": "31 dias",
@@ -19,7 +19,7 @@ def dame_dias (mes_usuario):
         "noviembre": "30 dias",
         "diciembre": "31 dias"
     }
-    return meses.get(mes_usuario)
+    return meses.get(mes_usuario) #Me devuelve el valor de la clave de meses(introducido por el usuario)
 
 ingresa_mes = input("Ingresa un mesa del año: ")
 resultado = dame_dias(ingresa_mes)

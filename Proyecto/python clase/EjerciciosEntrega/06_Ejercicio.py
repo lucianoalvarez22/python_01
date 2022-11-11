@@ -8,11 +8,11 @@
 
 
 def imprime_tabla_precios (lista_precios, porcentaje_descuento):
-    print("Precio original","Descuento","Nuevo precio")
-    for precio_original in (lista_precios):
-        descuento = precio_original * (porcentaje_descuento / 100)
-        nuevo_precio = precio_original - descuento
-        print(precio_original," €","\t",round(descuento,2)," €","\t",round(nuevo_precio,2)," €","\n")
+    print("Prec. Original","Descuento","\t","Nuevo precio")
+    for precio_original in lista_precios: #Itero los precios 
+        descuento = precio_original * (porcentaje_descuento / 100) #Calcúlo el descuento
+        nuevo_precio = precio_original - descuento #Calcúlo el nuevo precio
+        print(precio_original," €","\t",round(descuento,2)," €","\t",round(nuevo_precio,2)," €","\n") #Print con el precio or, descuenta y nuevo precio. 
 
 
 precios = [4.95, 9.95, 14.95,19.95,24.95]
