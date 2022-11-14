@@ -37,6 +37,6 @@ diccionario = crear_tabla()
 fila_usuario = input("Introduce la fila: ")
 columna_usuario = input("Introduce la columna: ")
 resultado = peticion_usuario(fila_usuario,columna_usuario,diccionario)
-print(f"La casilla correspondiente a {fila_usuario}-{columna_usuario} es {resultado}")
+print(f"La casilla correspondiente {fila_usuario}-{columna_usuario} es {resultado}")
 
 
