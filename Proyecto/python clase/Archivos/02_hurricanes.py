@@ -9,9 +9,8 @@ def limpiar (fila): #Funcion para limpiar filas de comillas, espacios en blanco 
 
 
 
-ruta_base = '/home/luciano/git1/python_01/Proyecto/python clase/Archivos/'
+ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/Archivos/'
 datos = ruta_base + 'hurricanes.csv'
-
 huracanes = []
 
 archivo = open(datos,'r')
