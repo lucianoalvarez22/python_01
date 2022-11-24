@@ -1,3 +1,5 @@
+
+
 def limpiar (fila): #Funcion para limpiar filas de comillas, espacios en blanco y saltos de linea
     salida = [] #Lista vacias donde meteremos el resultado de la funcion
     for elem in fila:

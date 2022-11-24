@@ -15,7 +15,7 @@ tareas_pendientes = []
 tpd = {}
 thd = {}
 
-ruta_base= '/home/alejandro/Proyectos/Python_01/archivos/'
+ruta_base= '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/Archivos/'
 pendientes = ruta_base + 'pendientes.txt'
 hechos = ruta_base + 'hechos.txt'
 
