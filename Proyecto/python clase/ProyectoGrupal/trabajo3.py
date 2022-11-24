@@ -1,5 +1,5 @@
 ruta_base= '/home/alejandro/Proyectos/Python_01/archivos/'
-#tareas = ruta_base + 'tareas.txt'
+tareas = ruta_base + 'tareas.txt'
 
 def agenda():
   a = open(tareas, 'a+')

@@ -1,3 +1,6 @@
+ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
+archivo_tarea = ruta_base + 'tareas.txt'
+
 
 def dame_tareas():
     lista_tareas = []
@@ -11,7 +14,7 @@ def dame_tareas():
         if tarea == '':
             break
 
-    lista_tareas.pop()
+    lista_tareas.pop(-1)
     return lista_tareas
 
 lista_tareas_insertadas = dame_tareas()
@@ -19,10 +22,8 @@ lista_tareas_insertadas = dame_tareas()
 
 
 def guardar_tareas (lista_tareas_insertadas):
-    ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
-    archivo_tarea = ruta_base + 'tareas.txt'
 
-    f = open(archivo_tarea, 'a+')
+    f = open(archivo_tarea, 'w')
     for t in lista_tareas_insertadas:
         guardando_tareas = t['tarea'] + '-' + t['estado']
 
@@ -32,20 +33,27 @@ def guardar_tareas (lista_tareas_insertadas):
 
 
 def leer_archivo():
-    ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
-    archivo_tarea = ruta_base + 'tareas.txt'
 
     f = open(archivo_tarea, 'r')
-    lectura_linea = f.readlines()
     lista_lectura = []
-    for lineas in f:
-        print(lineas)
+    lectura_linea = f.readlines()
+
+    for lineas in lectura_linea:
+        linea_troceada = lineas.split('-')
+        linea_troceada = lineas.replace('\n', '')
+        dict_lectura = {}
+        dict_lectura['tarea'] = linea_troceada
+        dict_lectura['estado'] = 'pendiente'
+        print(dict_lectura)
+    
+    """ return lista_lectura  """
 
 
 
 
+
+print(guardar_tareas(lista_tareas_insertadas))
 print(leer_archivo())
-#print(guardar_tareas(lista_tareas_insertadas))
 
 
     
