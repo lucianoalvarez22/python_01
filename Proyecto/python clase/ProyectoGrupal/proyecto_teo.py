@@ -1,6 +1,6 @@
 import os
 
-RUTA_BASE ='/home/teo/Proyectos/CoreNetworks/FP/curso 22-23/Programacion/ejercicios y apuntes python/ToDo'
+RUTA_BASE = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
 archivo = 'todo.csv'
 ESTADOS = ['Pendiente', 'Hecho']
 
@@ -144,5 +144,7 @@ def main():
 
         if opcion == 6:
             exit()
+        
+        
 
 main()

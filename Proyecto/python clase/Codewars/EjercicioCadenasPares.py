@@ -8,13 +8,47 @@ Ejemplos:
 'abcdef' => ['ab', 'cd', 'ef'] """
 
 def solution(s):
-  trozos = s.split("")
-  print(trozos)
+  ultimo_caracter = ''
+  if len(s)%2 != 0:
+    ultimo_caracter = s[-1]
+    s = s[0:len(s)-1]
+  lista_caracteres = []
+  for c in range(0,len(s), 2):
+    lista_caracteres.append(s[c:c+2])
 
-
-
-
+  if ultimo_caracter != '':
+    lista_caracteres.append(ultimo_caracter +'_')
+  print(lista_caracteres)
 
 cadena = input("Introduce una cadena: ")
-
 print(solution(cadena))
+
+
+
+
+
+
+
+  """ lista = []
+  contador = 0
+  for i in s:
+    contador += 1
+    if contador == 1:
+      lista.append(i)
+      contador = 0
+  print(lista) """
+
+  
+
+"""  if lista[0] and lista [1] == True:
+    unir = ''.join(lista)
+  print(lista.append(unir))  """
+    
+
+    
+
+
+
+
+
+
