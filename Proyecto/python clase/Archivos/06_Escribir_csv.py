@@ -25,3 +25,5 @@ def escribe_dict (archivo):
         escritor.writeheader() #Metodo para ESCRIBIR la cabecera. 
         escritor.writerow({'Nombre':'Luis', 'Apellido':'Martin', 'dni':'4564655746N'}) #Metodo para ESCRIBIR los DATOS
 
+escribe_dict(datos)
+
