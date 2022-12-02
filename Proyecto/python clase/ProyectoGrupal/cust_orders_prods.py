@@ -1,7 +1,7 @@
 import csv
 import os
 
-ruta_base = '/home/sfenrris/Desktop/ProyectoGrupal/'
+ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
 
 datos = ruta_base + 'cust_orders_prods.csv'
 
@@ -54,7 +54,7 @@ def dame_venta_empleados(archivo_devuelto,nombre_empleados):
 def porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto):
     for i in lista_venta_empleados:
         for k, v in i.items():
-            porcentaje_vendedor = (ventas_totales / v) * 100
+            porcentaje_vendedor = round(((v / ventas_totales) * 100), 2)
             print(f'{k}: {porcentaje_vendedor}%')
     return        
 
@@ -82,7 +82,7 @@ def dame_compra_clientes(archivo_devuelto, nombre_clientes):
 def porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto):
     for i in lista_compra_clientes:
         for k, v in i.items():
-            porcentaje_clientes = (ventas_totales / v) * 100
+            porcentaje_clientes = round(((v / ventas_totales) * 100), 2)
             print(f'{k}: {porcentaje_clientes}%')
     return  
 
