@@ -47,7 +47,7 @@ def dame_venta_empleados(archivo_devuelto,nombre_empleados):
         diccionario_vacio = {}
         diccionario_vacio[nombre] = contador_venta_empleado
         lista_ventas_empleados.append(diccionario_vacio)
-        contador_venta_empleado == 0
+        contador_venta_empleado = 0
     return lista_ventas_empleados
 
 def porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto):
@@ -75,7 +75,7 @@ def dame_compra_clientes(archivo_devuelto, nombre_clientes):
         diccionario_vacio = {}
         diccionario_vacio[nombre] = contador_compra_cliente
         lista_compra_clientes.append(diccionario_vacio)
-        contador_compra_cliente == 0
+        contador_compra_cliente = 0
     return lista_compra_clientes
 
 def porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto):
@@ -111,6 +111,7 @@ def main():
     while True:
         opcion = input('Elije una opcion: ')
         limpiapantalla()
+        menu()
 
         if opcion == '1':
             limpiapantalla()
