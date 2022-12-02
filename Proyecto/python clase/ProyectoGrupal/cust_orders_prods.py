@@ -1,7 +1,7 @@
 import csv
 import os
 
-ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
+ruta_base = '/home/luciano/git1/python_01/Proyecto/python clase/ProyectoGrupal/'
 datos = ruta_base + 'cust_orders_prods.csv'
 
 def menu():
