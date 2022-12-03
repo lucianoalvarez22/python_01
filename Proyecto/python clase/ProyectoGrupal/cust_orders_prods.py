@@ -1,7 +1,7 @@
 import csv
 import os
 
-ruta_base = '/home/sfenrris/Desktop/ProyectoGrupal/'
+ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
 
 datos = ruta_base + 'cust_orders_prods.csv'
 
@@ -58,38 +58,6 @@ def porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto
             porcentaje_vendedor = round((( v / ventas_totales) * 100) ,2)
             print(f'{k}: {porcentaje_vendedor}%')
     return        
-    porcentaje_vendedor = round(((v / ventas_totales) * 100), 2)
-    print(f'{k}: {porcentaje_vendedor}%')
-    return        
-
-def dame_nombre_clientes(archivo_devuelto):
-    nombre_clientes = []
-    for e in archivo_devuelto:
-        nombre_clientes_repetidos = e['customer_name']
-        if nombre_clientes_repetidos not in nombre_clientes:
-            nombre_clientes.append(nombre_clientes_repetidos)
-    return nombre_clientes
-
-def dame_compra_clientes(archivo_devuelto, nombre_clientes):
-    lista_compra_clientes = []
-    contador_compra_cliente = 0
-    for nombre in nombre_clientes:
-        for v in archivo_devuelto:
-            if v['customer_name'] == nombre:
-                contador_compra_cliente += (int(v['quantity']) * int(v['unit_price']))
-        diccionario_vacio = {}
-        diccionario_vacio[nombre] = contador_compra_cliente
-        lista_compra_clientes.append(diccionario_vacio)
-        contador_compra_cliente = 0
-    return lista_compra_clientes
-
-def porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto):
-    for i in lista_compra_clientes:
-        for k, v in i.items():
-            porcentaje_clientes = round(((v / ventas_totales) * 100), 2)
-            print(f'{k}: {porcentaje_clientes}%')
-    return  
-
 
 def dame_nombre_clientes(archivo_devuelto):
     nombre_clientes = []
@@ -175,12 +143,6 @@ def main():
         menu()
         opcion = input('Elije una opcion: ')
         limpiapantalla()
-    menu()
-
-    while True:
-        opcion = input('Elije una opcion: ')
-        limpiapantalla()
-        menu()
 
         if opcion == '1':
             limpiapantalla()
@@ -190,11 +152,6 @@ def main():
             limpiapantalla()
             print(porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto))
             
-            menu()
-        if opcion == '2':
-            limpiapantalla()
-            print(porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto))
-            menu()
         if opcion == '5':
             break
     print('Programa finalizado')    
