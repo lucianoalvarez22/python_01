@@ -1,7 +1,8 @@
 import csv
 import os
 
-ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
+#ruta_base = '/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/ProyectoGrupal/'
+ruta_base = '/home/luciano/git1/python_01/Proyecto/python clase/ProyectoGrupal/'
 
 datos = ruta_base + 'cust_orders_prods.csv'
 
@@ -125,7 +126,15 @@ def orden_productos_vendidos (productos_en_orden, lista_productos_vendidos):
             for k, v in ventas_productos.items():
                 if v == produc_orden:
                     lista_definitiva.append({k:v})
-    print(lista_definitiva)
+    return lista_definitiva
+
+def ingresos_mensuales(archivo_devuelto):
+    dict_meses = {"01": 0,"02": 0,"03": 0,"04": 0,"05": 0,"06": 0,"07": 0,"08": 0,"09": 0,"10": 0,"11": 0,"12": 0}
+    for archivo in archivo_devuelto:
+        for mes in dict_meses:
+            if archivo_devuelto[archivo]["order_date"][5:7] in mes:
+                dict_meses[mes] += int(archivo_devuelto[archivo]["quantity"].replace(',','')) * int(archivo_devuelto[archivo]["unit_price"].replace(',',''))
+    print(dict_meses)
 
     
     """ for ventas_productos in lista_productos_vendidos:
@@ -144,8 +153,10 @@ ventas_totales = dame_ventas_totales(archivo_devuelto)
 nombre_producto = dame_nombre_producto(archivo_devuelto)
 lista_productos_vendidos = productos_vendidos(nombre_producto, archivo_devuelto)
 productos_en_orden = orden_mas_vendidos(lista_productos_vendidos)
+lista_productos_en_orden = orden_productos_vendidos(productos_en_orden, lista_productos_vendidos)
 
-orden_productos_vendidos(productos_en_orden, lista_productos_vendidos)
+
+ingresos_mensuales(archivo_devuelto)
 
 def main():
     limpiapantalla()
@@ -165,11 +176,9 @@ def main():
         
         if opcion == '3':
             limpiapantalla()
-            print(productos_en_orden)
+            print(lista_productos_en_orden)
 
             
         if opcion == '5':
             break
     print('Programa finalizado')
-
-#6500000 48700000 2900000 2000000
