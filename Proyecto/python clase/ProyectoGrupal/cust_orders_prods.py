@@ -52,7 +52,7 @@ def dame_venta_empleados(archivo_devuelto,nombre_empleados):
         contador_venta_empleado = 0
     return lista_ventas_empleados
 
-def porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto):
+def porcentaje_empleados(lista_venta_empleados, ventas_totales):
     for i in lista_venta_empleados:
         for k, v in i.items():
             porcentaje_vendedor = round((( v / ventas_totales) * 100) ,2)
@@ -80,7 +80,7 @@ def dame_compra_clientes(archivo_devuelto, nombre_clientes):
         contador_compra_cliente = 0
     return lista_compra_clientes
 
-def porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto):
+def porcentaje_clientes(lista_compra_clientes, ventas_totales):
     for i in lista_compra_clientes:
         for k, v in i.items():
             porcentaje_clientes = round((( v / ventas_totales) * 100) ,2)
@@ -88,17 +88,17 @@ def porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto)
     return  
 
 def dame_nombre_producto(archivo_devuelto):
-    nombre_producto = []
+    nombres_productos = []
     for p in archivo_devuelto:
         nombre_productos_repetidos = p['product_name']
-        if nombre_productos_repetidos not in nombre_producto:
-            nombre_producto.append(nombre_productos_repetidos)
-    return nombre_producto
+        if nombre_productos_repetidos not in nombres_productos:
+            nombres_productos.append(nombre_productos_repetidos)
+    return nombres_productos
 
-def productos_vendidos(dame_nombre_producto, archivo_devuelto):
+def productos_vendidos(nombre_producto, archivo_devuelto):
     lista_venta_productos = []
     contador_venta_productos = 0
-    for nombre in dame_nombre_producto:
+    for nombre in nombre_producto:
         for v in archivo_devuelto:
             if v['product_name'] == nombre:
                 contador_venta_productos +=  int(v['quantity'])
@@ -108,15 +108,32 @@ def productos_vendidos(dame_nombre_producto, archivo_devuelto):
         contador_venta_productos = 0
     return lista_venta_productos
 
-def los_mas_vendidos(lista_productos_vendidos, archivo_devuelto):
+def orden_mas_vendidos(lista_productos_vendidos):
     lista_cant_prod = []
     for i in lista_productos_vendidos:
         for k, v in i.items():
             lista_cant_prod.append(v)
-    max(lista_cant_prod)
-    print(lista_cant_prod)
+    # lista_ordenada_desc = sorted(lista_cant_prod, reverse=True) #Sorted para ordenar la lista(la lista de numeros, reverse=true ordena de mayor a menor)
+    # print(lista_ordenada_desc)
+    lista_cant_prod.sort(reverse=True)
+    return lista_cant_prod[0:5]
+
+def orden_productos_vendidos (productos_en_orden, lista_productos_vendidos):
+    lista_definitiva = []
+    for produc_orden in productos_en_orden:
+        for ventas_productos in lista_productos_vendidos:
+            for k, v in ventas_productos.items():
+                if v == produc_orden:
+                    lista_definitiva.append({k:v})
+    print(lista_definitiva)
+
+    
+    """ for ventas_productos in lista_productos_vendidos:
+        for k, v in ventas_productos.items():
+            if v in productos_en_orden:
+                lista_definitiva.append({k:v})
+    print(lista_definitiva) """
             
-    return  
 
 archivo_devuelto = leer(datos)
 nombre_empleados = dame_nombres_empleados(archivo_devuelto)
@@ -124,17 +141,11 @@ lista_venta_empleados = dame_venta_empleados(archivo_devuelto, nombre_empleados)
 nombre_clientes = dame_nombre_clientes(archivo_devuelto)
 lista_compra_clientes = dame_compra_clientes(archivo_devuelto, nombre_clientes)
 ventas_totales = dame_ventas_totales(archivo_devuelto)
-dame_nombre_producto = dame_nombre_producto(archivo_devuelto)
-lista_productos_vendidos = productos_vendidos(dame_nombre_producto, archivo_devuelto)
+nombre_producto = dame_nombre_producto(archivo_devuelto)
+lista_productos_vendidos = productos_vendidos(nombre_producto, archivo_devuelto)
+productos_en_orden = orden_mas_vendidos(lista_productos_vendidos)
 
-'''print(dame_ventas_totales(archivo_devuelto))
-dame_nombres_empleados(archivo_devuelto)
-print(dame_venta_empleados(archivo_devuelto,nombre_empleados))
-print(porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto)) 
-limpiapantalla()'''
-
-
-
+orden_productos_vendidos(productos_en_orden, lista_productos_vendidos)
 
 def main():
     limpiapantalla()
@@ -146,15 +157,19 @@ def main():
 
         if opcion == '1':
             limpiapantalla()
-            print(porcentaje_empleados(lista_venta_empleados, ventas_totales, archivo_devuelto))
+            print(porcentaje_empleados(lista_venta_empleados, ventas_totales))
             
         if opcion == '2':
             limpiapantalla()
-            print(porcentaje_clientes(lista_compra_clientes, ventas_totales, archivo_devuelto))
+            print(porcentaje_clientes(lista_compra_clientes, ventas_totales))
+        
+        if opcion == '3':
+            limpiapantalla()
+            print(productos_en_orden)
+
             
         if opcion == '5':
             break
-    print('Programa finalizado')    
+    print('Programa finalizado')
 
-
-main()
+#6500000 48700000 2900000 2000000
