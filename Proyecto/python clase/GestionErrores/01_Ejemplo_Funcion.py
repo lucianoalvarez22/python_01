@@ -1,4 +1,4 @@
-""" def division (numerador, denominador):
+def division (numerador, denominador):
     #return numerador/denominador
     resultado = None
     try:
@@ -9,10 +9,10 @@
     
 
 
-print(division(13,0)) """
+print(division(13,0))
 
 
-def pide_numero ():
+""" def pide_numero ():
     try:
         numero = int(input("Inserta un numero entero: "))
         return True
@@ -20,5 +20,5 @@ def pide_numero ():
         print("No es un numero entero")
 
 
-print(pide_numero())
+print(pide_numero()) """
 

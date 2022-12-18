@@ -1,5 +1,5 @@
 
-def esto_falla (): 
+""" def esto_falla (): 
     try: #Abrimos el archivo para ver si existe. Si no existe, pasa el EXCEPT. Si existe va al ELSE. Y al final tanto si existe como sino, va al FINALLY
         f = open('no_existe.txt', 'r')
 
@@ -9,7 +9,7 @@ def esto_falla ():
         pass
     
     finally:  #Si hay un error o no, pasa a finally
-        pass
+        pass """
 
 
 
@@ -21,7 +21,7 @@ def genera_error(num): #Funcion para generar el error que QUERAMOS.
         print("Funciona")
 
 try:
-    genera_error(60)
+    genera_error(5)
 except:
     exit()
 
