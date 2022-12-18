@@ -69,7 +69,7 @@ txt = 'you are doing well'
 #print(txt[2:999])
 
 
-""" s = 0
-#for d in range(0, 5, 0.1):
-s += d
-#print(s) """
+s = 0
+for d in range(0, 5, 0.1):
+    s += d
+print(s)

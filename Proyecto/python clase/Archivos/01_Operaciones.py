@@ -7,7 +7,8 @@
 # "a+" (Para lectura y escritura. Si existe, se añade al final)
 # "b" (abre el archivo en modo binario)
 
-archivo = open('/home/luciano/git1/python_01/Proyecto/python clase/Archivos/pruebas.txt','r')
+archivo = open('/home/luciano/Github_Luciano/PythonCasa_01/python_01/Proyecto/python clase/Archivos/pruebas.txt','r')
+
 numeros = []
 for linea in archivo:
     numeros.append(int(linea))
